@@ -2,13 +2,34 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <title>Cecina Map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <!-- <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>-->
     <style> body {padding: 0; margin: 0;} </style>
     <script src="p5.min.js"></script>
     <script src="addons/p5.dom.min.js"></script>
     <script src="addons/p5.sound.min.js"></script>
+    <script src="addons/p5.geolocation.js"></script>
+    <script src="addons/mappa.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa" rel="stylesheet">
+    <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
     <script src="sketch.js"></script>
   </head>
   <body>
+    <div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZWxlY2FwcCIsImEiOiJjam9yMGZsMWUwNnhrM2ttamx0MW9hZzI5In0.kuk9Uo8nKbTVidD5V63jlg';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/elecapp/cjoznd90i0ivq2rqvm1hi9q51',
+center: [10.399840, 43.716895],
+zoom: 13.7
+});
+</script>
   </body>
 </html>
